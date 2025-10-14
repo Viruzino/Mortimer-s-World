@@ -1,0 +1,24 @@
+{
+    "razas": [
+        {
+            "nombre": "Humano",
+            "descripcion": "Versátiles y adaptables, los humanos son la raza más común.",
+            "bonificaciones": {"fuerza": 1, "destreza": 1, "constitucion": 1, "inteligencia": 1, "sabiduria": 1, "carisma": 1},
+            "edad": "Viven menos de 100 años",
+            "tamaño": "Mediano",
+            "velocidad": 30,
+            "idiomas": ["Común"],
+            "rasgos": ["Versatilidad"]
+        },
+        {
+            "nombre": "Elfo",
+            "descripcion": "Seres gráciles y longevos con conexión con la naturaleza y la magia.",
+            "bonificaciones": {"destreza": 2},
+            "edad": "Pueden vivir hasta 750 años",
+            "tamaño": "Mediano",
+            "velocidad": 30,
+            "idiomas": ["Común", "Élfico"],
+            "rasgos": ["Ascendencia Feérica", "Trance"]
+        }
+    ]
+}

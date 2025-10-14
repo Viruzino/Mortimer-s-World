@@ -1,0 +1,245 @@
+[
+    {
+        "nombre": "Equipo básico de pesca",
+        "tipo": "Herramienta",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Utensilios de cocina",
+        "tipo": "Artesano",
+        "precio": 1,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas del tejedor",
+        "tipo": "Artesano",
+        "precio": 1,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas del tallador de madera",
+        "tipo": "Artesano",
+        "precio": 1,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Kit de herborista",
+        "tipo": "Herramienta",
+        "precio": 5,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de zapatero",
+        "tipo": "Artesano",
+        "precio": 5,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas para trabajar el cuero",
+        "tipo": "Artesano",
+        "precio": 5,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de carpintero",
+        "tipo": "Artesano",
+        "precio": 8,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Suministros para calígrafos",
+        "tipo": "Artesano",
+        "precio": 10,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de albañil",
+        "tipo": "Artesano",
+        "precio": 10,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Suministros para pintores",
+        "tipo": "Artesano",
+        "precio": 10,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de alfarero",
+        "tipo": "Artesano",
+        "precio": 10,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Kit de falsificación",
+        "tipo": "Herramienta",
+        "precio": 15,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas del cartógrafo",
+        "tipo": "Artesano",
+        "precio": 15,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Suministros para cerveceros",
+        "tipo": "Artesano",
+        "precio": 20,
+        "peso": 9,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de Herrero",
+        "tipo": "Herramienta",
+        "precio": 20,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de joyero",
+        "tipo": "Herramienta",
+        "precio": 25,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Kit de disfrazes",
+        "tipo": "Herramienta",
+        "precio": 25,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas del Navegador",
+        "tipo": "Herramienta",
+        "precio": 25,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de los ladrones",
+        "tipo": "Herramienta",
+        "precio": 25,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas del soplador de vidrio",
+        "tipo": "Artesano",
+        "precio": 30,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Suministros del alquimista",
+        "tipo": "Herramienta",
+        "precio": 50,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Kit de envenenamiento",
+        "tipo": "Herramienta",
+        "precio": 50,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Herramientas de Manitas",
+        "tipo": "Herramienta",
+        "precio": 25,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Juego de dados",
+        "tipo": "Juegos",
+        "precio": 1,
+        "peso": 0.28125,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Juego de cartas para jugar",
+        "tipo": "Juegos",
+        "precio": 5,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    },
+    {
+        "nombre": "Juego de tres dragones",
+        "tipo": "Juegos",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "herramientas",
+        "consumible": false
+    }
+]

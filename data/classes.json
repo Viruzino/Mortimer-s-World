@@ -1,0 +1,26 @@
+{
+    "clases": [
+        {
+            "nombre": "Guerrero",
+            "descripcion": "Un maestro del combate, experto en armas y armaduras.",
+            "dado_de_golpe": 10,
+            "competencias": ["Armaduras ligeras", "Armaduras medias", "Armaduras pesadas", "Escudos", "Armas simples", "Armas marciales"],
+            "caracteristica_principal": ["Fuerza", "Destreza"],
+            "subclases": [
+                {"nombre": "Campeón", "descripcion": "Un luchador simple pero efectivo, con críticos mejorados."},
+                {"nombre": "Guerrero del Arco", "descripcion": "Especialista en combate a distancia."}
+            ]
+        },
+        {
+            "nombre": "Mago",
+            "descripcion": "Un usuario de magia arcana que emplea un grimorio.",
+            "dado_de_golpe": 6,
+            "competencias": ["Dagas", "Dardos", "Hondas", "Bastones", "Ballestas ligeras"],
+            "caracteristica_principal": ["Inteligencia"],
+            "subclases": [
+                {"nombre": "Escuela de Evocación", "descripcion": "Especialista en hechizos de daño."},
+                {"nombre": "Escuela de Abjuración", "descripcion": "Especialista en defensa mágica."}
+            ]
+        }
+    ]
+}

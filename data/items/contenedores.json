@@ -1,0 +1,74 @@
+[
+    {
+        "nombre": "Bolsa",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Mochila",
+        "precio": 2,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Botella de vidrio",
+        "precio": 2,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Barril",
+        "precio": 2,
+        "peso": 70,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Balde",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Estuche para mapas o pergaminos",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Jarra",
+        "precio": 2,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Cesta",
+        "precio": 4,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    },
+    {
+        "nombre": "Cofre",
+        "precio": 5,
+        "peso": 25,
+        "unidad_peso": "lb",
+        "categoria": "contenedores",
+        "consumible": false
+    }
+]

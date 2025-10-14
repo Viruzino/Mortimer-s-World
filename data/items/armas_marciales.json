@@ -1,0 +1,236 @@
+[
+    {
+        "nombre": "Hacha de Batalla",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 10,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Cimitarra de doble filo",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 100,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Mangual",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 10,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Guja",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 20,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Gran Hacha",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 30,
+        "peso": 7,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Espadón",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 50,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Alabarda",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 20,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Hoopak",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 1,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Lanza de Caballería",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 10,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Espada Larga",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 15,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Mazo de guerra",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 10,
+        "peso": 10,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Lucero del alba",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 15,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Pica",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 18,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Estoque",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 25,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Cimitarra",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 25,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Espada corta",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 10,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Tridente",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Pico de guerra",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Martillo de guerra",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 15,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Látigo",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Katana",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 15,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Cerbatana",
+        "tipo": "Arma a Distancia",
+        "precio": 10,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Ballesta de mano",
+        "tipo": "Arma a Distancia",
+        "precio": 75,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Ballesta pesada",
+        "tipo": "Arma a Distancia",
+        "precio": 50,
+        "peso": 18,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Arco largo",
+        "tipo": "Arma a Distancia",
+        "precio": 50,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    },
+    {
+        "nombre": "Red",
+        "tipo": "Arma a Distancia",
+        "precio": 1,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas marciales",
+        "consumible": false
+    }
+]

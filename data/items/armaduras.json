@@ -1,0 +1,128 @@
+[
+    {
+        "nombre": "Acolchada",
+        "tipo": "Armadura Ligera",
+        "precio": 5,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Cuero",
+        "tipo": "Armadura Ligera",
+        "precio": 10,
+        "peso": 10,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Cuero Tachonado",
+        "tipo": "Armadura Ligera",
+        "precio": 45,
+        "peso": 13,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Pieles",
+        "tipo": "Armadura Media",
+        "precio": 10,
+        "peso": 12,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Camisote de malla",
+        "tipo": "Armadura Media",
+        "precio": 50,
+        "peso": 20,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Cota de Escamas",
+        "tipo": "Armadura Media",
+        "precio": 50,
+        "peso": 45,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Armadura con pinchos",
+        "tipo": "Armadura Media",
+        "precio": 75,
+        "peso": 45,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Coraza",
+        "tipo": "Armadura Media",
+        "precio": 400,
+        "peso": 20,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Placas y Malla",
+        "tipo": "Armadura Media",
+        "precio": 750,
+        "peso": 40,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Cota Guarnecida",
+        "tipo": "Armadura Pesada",
+        "precio": 30,
+        "peso": 40,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Cota de Malla",
+        "tipo": "Armadura Pesada",
+        "precio": 75,
+        "peso": 55,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Armadura de Bandas",
+        "tipo": "Armadura Pesada",
+        "precio": 200,
+        "peso": 60,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Armadura de Placas",
+        "tipo": "Armadura Pesada",
+        "precio": 1500,
+        "peso": 65,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    },
+    {
+        "nombre": "Escudo",
+        "tipo": "Armadura",
+        "precio": 10,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "armaduras",
+        "consumible": true
+    }
+]

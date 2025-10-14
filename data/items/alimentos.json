@@ -1,0 +1,119 @@
+[
+    {
+        "nombre": "Trigo",
+        "tipo": "Comida",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Barra de pan",
+        "tipo": "Comida",
+        "precio": 2,
+        "peso": 0.5,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Cerveza (taza)",
+        "tipo": "Bebida",
+        "precio": 4,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Sal",
+        "tipo": "Condimento",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Trozo de queso",
+        "tipo": "Comida",
+        "precio": 1,
+        "peso": 0.5,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Cerveza (galón)",
+        "tipo": "Bebida",
+        "precio": 2,
+        "peso": 8,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Vino común (jarra)",
+        "tipo": "Bebida",
+        "precio": 2,
+        "peso": 1.5,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Trozo de carne",
+        "tipo": "Comida",
+        "precio": 3,
+        "peso": 0.5,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Jengibre",
+        "tipo": "Condimento",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Vino fino (botella)",
+        "tipo": "Bebida",
+        "precio": 10,
+        "peso": 2.5,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Raciones (1 día)",
+        "tipo": "Comida",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Canela",
+        "tipo": "Condimento",
+        "precio": 2,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    },
+    {
+        "nombre": "Pimienta",
+        "tipo": "Condimento",
+        "precio": 2,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "comida y bebida",
+        "consumible": true
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "nombre": "Carreta",
+        "tipo": "Terrestre",
+        "precio": 30,
+        "peso_soportado": 200,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Carro",
+        "tipo": "Terrestre",
+        "precio": 70,
+        "peso_soportado": 400,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Carruaje",
+        "tipo": "Terrestre",
+        "precio": 200,
+        "peso_soportado": 600,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Carro de guerra",
+        "tipo": "Terrestre",
+        "precio": 500,
+        "peso_soportado": 100,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Canoa",
+        "tipo": "Agua",
+        "precio": 100,
+        "peso_soportado": 0,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Bote de remos",
+        "tipo": "Agua",
+        "precio": 100,
+        "peso_soportado": 0,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Barco calamar",
+        "tipo": "Espacial",
+        "precio": 50000,
+        "peso_soportado": 0,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    },
+    {
+        "nombre": "Estrella Polilla",
+        "tipo": "Espacial",
+        "precio": 80000,
+        "peso_soportado": 0,
+        "unidad_peso": "lb",
+        "categoria": "vehiculos",
+        "consumible": false
+    }
+]

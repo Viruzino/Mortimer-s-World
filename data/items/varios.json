@@ -1,0 +1,128 @@
+[
+    {
+        "nombre": "Tiza (1 pieza)",
+        "tipo": "Escritura",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Pluma para tinta",
+        "tipo": "Escritura",
+        "precio": 2,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Tinta (botella de 1 onza)",
+        "tipo": "Escritura",
+        "precio": 10,
+        "peso": 0.0625,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": true
+    },
+    {
+        "nombre": "Libro",
+        "tipo": "Escritura",
+        "precio": 25,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Pergamino (una hoja)",
+        "tipo": "Escritura",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Papel (una hoja)",
+        "tipo": "Escritura",
+        "precio": 2,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Cera para Sellos",
+        "tipo": "Escritura",
+        "precio": 5,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": true
+    },
+    {
+        "nombre": "Libro de hechizos",
+        "tipo": "Escritura",
+        "precio": 50,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Piedra de afilar",
+        "tipo": "Varios",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Jabón",
+        "tipo": "Varios",
+        "precio": 2,
+        "peso": 0.2,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": true
+    },
+    {
+        "nombre": "Ábaco",
+        "tipo": "Varios",
+        "precio": 2,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Aparejo de poleas",
+        "tipo": "Varios",
+        "precio": 1,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Balanza del comerciante",
+        "tipo": "Varios",
+        "precio": 5,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    },
+    {
+        "nombre": "Abrojo",
+        "tipo": "Varios",
+        "precio": 5,
+        "peso": 0.1,
+        "unidad_peso": "lb",
+        "categoria": "varios",
+        "consumible": false
+    }
+]

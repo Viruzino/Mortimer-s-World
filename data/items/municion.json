@@ -1,0 +1,74 @@
+[
+    {
+        "nombre": "Bala para honda",
+        "tipo": "Munición",
+        "precio": 0.2,
+        "peso": 0.075,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": true
+    },
+    {
+        "nombre": "Aguja para cerbatana",
+        "tipo": "Munición",
+        "precio": 2,
+        "peso": 0.02,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": true
+    },
+    {
+        "nombre": "Agujas para cerbatana (50)",
+        "tipo": "Munición",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": true
+    },
+    {
+        "nombre": "Flecha",
+        "tipo": "Munición",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": true
+    },
+    {
+        "nombre": "Perno de ballesta",
+        "tipo": "Munición",
+        "precio": 5,
+        "peso": 0.075,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": true
+    },
+    {
+        "nombre": "Carcaj",
+        "tipo": "Contenedor",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": false
+    },
+    {
+        "nombre": "Estuche para pernos de ballesta",
+        "tipo": "Contenedor",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": false
+    },
+    {
+        "nombre": "Bolsa para honda o cerbatana",
+        "tipo": "Contenedor",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "municion",
+        "consumible": false
+    }
+]

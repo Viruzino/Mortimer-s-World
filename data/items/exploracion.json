@@ -1,0 +1,114 @@
+[
+    {
+        "nombre": "Silbato de señal",
+        "precio": 5,
+        "peso": 0.04375,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Campana",
+        "precio": 1,
+        "peso": 7,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Piton para escalar",
+        "precio": 5,
+        "peso": 0.25,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Poste (10 pies)",
+        "precio": 5,
+        "peso": 7,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Punta de hierro",
+        "precio": 1,
+        "peso": 0.5,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Púas de hierro (10)",
+        "precio": 1,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Repelente de insectos (Incienso)",
+        "precio": 1,
+        "peso": 0.25,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": true
+    },
+    {
+        "nombre": "Escalera (10 pies)",
+        "precio": 1,
+        "peso": 25,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Aparejo de poleas",
+        "precio": 1,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Cuerda de cáñamo (50 pies)",
+        "precio": 1,
+        "peso": 10,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Repelente de insectos (ungüento)",
+        "precio": 1,
+        "peso": 0.25,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": true
+    },
+    {
+        "nombre": "Espejo de acero",
+        "precio": 5,
+        "peso": 0.5,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Cuerda de seda (50 pies)",
+        "precio": 10,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    },
+    {
+        "nombre": "Equipo para Escalar",
+        "precio": 25,
+        "peso": 12,
+        "unidad_peso": "lb",
+        "categoria": "exploracion",
+        "consumible": false
+    }
+]

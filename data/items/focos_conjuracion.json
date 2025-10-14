@@ -1,0 +1,110 @@
+[
+    {
+        "nombre": "Bastón",
+        "tipo": "Cuerpo a Cuerpo/Foco Arcano",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Cristal",
+        "tipo": "Foco Arcano",
+        "precio": 10,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Orbe",
+        "tipo": "Foco Arcano",
+        "precio": 20,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Vara",
+        "tipo": "Foco Arcano",
+        "precio": 10,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Varita mágica",
+        "tipo": "Foco Arcano",
+        "precio": 10,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Amuleto",
+        "tipo": "Símbolo sagrado",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Emblema",
+        "tipo": "Símbolo sagrado",
+        "precio": 5,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Relicario",
+        "tipo": "Símbolo sagrado",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Ramita de muérdago",
+        "tipo": "Foco Druídico",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Totem",
+        "tipo": "Foco Druídico",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Varita de tejo",
+        "tipo": "Foco Druídico",
+        "precio": 10,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    },
+    {
+        "nombre": "Bolsa de componentes",
+        "tipo": "Equipo de aventura",
+        "precio": 25,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "focos de conjuración",
+        "consumible": false
+    }
+]

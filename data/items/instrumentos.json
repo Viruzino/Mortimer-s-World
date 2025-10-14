@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "Flauta",
+        "tipo": "Viento",
+        "precio": 2,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Chirimía",
+        "tipo": "Viento",
+        "precio": 2,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Cuerno",
+        "tipo": "Metal",
+        "precio": 3,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Tambor",
+        "tipo": "Percusión",
+        "precio": 6,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Flauta de Pan",
+        "tipo": "Viento",
+        "precio": 12,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Dulcémele",
+        "tipo": "Cuerda",
+        "precio": 25,
+        "peso": 10,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Gaita",
+        "tipo": "Viento",
+        "precio": 30,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Lira",
+        "tipo": "Cuerda",
+        "precio": 30,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Viola",
+        "tipo": "Cuerda",
+        "precio": 30,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    },
+    {
+        "nombre": "Laúd",
+        "tipo": "Cuerda",
+        "precio": 35,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "instrumentos musicales",
+        "consumible": false
+    }
+]

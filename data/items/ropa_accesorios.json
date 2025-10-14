@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "Túnicas",
+        "tipo": "Ropa común",
+        "precio": 1,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Ropa común",
+        "tipo": "Ropa común",
+        "precio": 5,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Ropa de viajero",
+        "tipo": "Ropa común",
+        "precio": 2,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Ropa de personaliza",
+        "tipo": "Ropa común",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Ropa fina",
+        "tipo": "Ropa común",
+        "precio": 15,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Anillo de sello",
+        "tipo": "Accesorio",
+        "precio": 5,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Vestimentas de tela de oro",
+        "tipo": "Ropa de Tincho",
+        "precio": 25,
+        "peso": 6,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Ropa, clima frío",
+        "tipo": "Ropa Especializada",
+        "precio": 10,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Raquetas de nieve",
+        "tipo": "Supervivencia",
+        "precio": 2,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    },
+    {
+        "nombre": "Crampones",
+        "tipo": "Supervivencia",
+        "precio": 2,
+        "peso": 0.25,
+        "unidad_peso": "lb",
+        "categoria": "ropa y accesorios",
+        "consumible": false
+    }
+]

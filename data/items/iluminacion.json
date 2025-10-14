@@ -1,0 +1,74 @@
+[
+    {
+        "nombre": "Vela",
+        "tipo": "Iluminación",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": true
+    },
+    {
+        "nombre": "Antorcha",
+        "tipo": "Iluminación",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": true
+    },
+    {
+        "nombre": "Linterna de ojo de buey",
+        "tipo": "Iluminación",
+        "precio": 10,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": false
+    },
+    {
+        "nombre": "Lámpara",
+        "tipo": "Iluminación",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": false
+    },
+    {
+        "nombre": "Farol de mano",
+        "tipo": "Iluminación",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": false
+    },
+    {
+        "nombre": "Yesquero",
+        "tipo": "Fuego",
+        "precio": 5,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": false
+    },
+    {
+        "nombre": "Aceite (frasco)",
+        "tipo": "Consumible",
+        "precio": 1,
+        "peso": 1,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": true
+    },
+    {
+        "nombre": "Nuez Wukka",
+        "tipo": "Iluminación",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "fuego e iluminacion",
+        "consumible": true
+    }
+]

@@ -1,0 +1,155 @@
+[
+    {
+        "nombre": "Clava",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 1,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Daga",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 2,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Dardo",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 1,
+        "peso": 0.25,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": true
+    },
+    {
+        "nombre": "Gran Garrote",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 2,
+        "peso": 10,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Hacha de mano",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Jabalina",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": true
+    },
+    {
+        "nombre": "Martillo Ligero",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 2,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Maza",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Barra",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 2,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Hoz",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 1,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Lanza",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 1,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Yklwa",
+        "tipo": "Cuerpo a Cuerpo",
+        "precio": 2,
+        "peso": 3,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Ballesta Ligera",
+        "tipo": "Arma a Distancia",
+        "precio": 25,
+        "peso": 5,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Arco Corto",
+        "tipo": "Arma a Distancia",
+        "precio": 25,
+        "peso": 2,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Honda",
+        "tipo": "Arma a Distancia",
+        "precio": 1,
+        "peso": 0,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Bastón de Madera",
+        "tipo": "Cuerpo a Cuerpo/Foco Arcano",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    },
+    {
+        "nombre": "Bastón",
+        "tipo": "Cuerpo a Cuerpo/Foco Arcano",
+        "precio": 5,
+        "peso": 4,
+        "unidad_peso": "lb",
+        "categoria": "armas simples",
+        "consumible": false
+    }
+]
