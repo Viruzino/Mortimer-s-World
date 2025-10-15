@@ -1,8 +1,12 @@
 import discord
 from discord.ext import commands
 import random
+import sqlite3
 from typing import Dict, List
 
+# ─────────────────────────────────────────────
+# 📌 Clase para manejar la lógica de creación
+# ─────────────────────────────────────────────
 class CharacterCreator:
     def __init__(self):
         self.stats_order = ['Fuerza', 'Destreza', 'Constitución', 'Inteligencia', 'Sabiduría', 'Carisma']
@@ -40,19 +44,61 @@ class CharacterCreator:
     def calcular_modificador(self, valor: int) -> int:
         return (valor - 10) // 2
 
+# ─────────────────────────────────────────────
+# 📌 Clase principal del comando
+# ─────────────────────────────────────────────
 class CharacterCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.creator = CharacterCreator()
         self.character_creation = {}
 
-    @commands.command(
-        name='crear_personaje',
-        help='Inicia la creación de un personaje',
-        description='Muestra los métodos disponibles para crear un personaje'
-    )
+        # Conexión a la base de datos
+        self.conn = sqlite3.connect('personajes.db')
+        self.cursor = self.conn.cursor()
+        self._crear_tabla_personajes()
+
+    def _crear_tabla_personajes(self):
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS personajes (
+                user_id TEXT PRIMARY KEY,
+                fuerza INTEGER,
+                destreza INTEGER,
+                constitucion INTEGER,
+                inteligencia INTEGER,
+                sabiduria INTEGER,
+                carisma INTEGER,
+                metodo TEXT
+            )
+        ''')
+        self.conn.commit()
+
+    def _guardar_personaje(self, user_id: str, stats: Dict[str, int], metodo: str):
+        self.cursor.execute('''
+            INSERT OR REPLACE INTO personajes 
+            (user_id, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, metodo)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            user_id,
+            stats['Fuerza'],
+            stats['Destreza'],
+            stats['Constitución'],
+            stats['Inteligencia'],
+            stats['Sabiduría'],
+            stats['Carisma'],
+            metodo
+        ))
+        self.conn.commit()
+
+    def _obtener_personaje(self, user_id: str):
+        self.cursor.execute('SELECT * FROM personajes WHERE user_id = ?', (user_id,))
+        return self.cursor.fetchone()
+
+    # ────────────────
+    # 📜 CREAR PERSONAJE
+    # ────────────────
+    @commands.command(name='crear_personaje', help='Inicia la creación de un personaje')
     async def crear_personaje(self, ctx, metodo: str = None):
-        """Inicia la creación de un personaje - Elige método de generación de stats"""
         if metodo is None:
             embed = discord.Embed(
                 title="🎭 Creación de Personaje - Métodos de Stats",
@@ -68,13 +114,13 @@ class CharacterCommands(commands.Cog):
             
             embed.add_field(
                 name=f"🎲 `{self.bot.command_prefix}crear_personaje tirada`",
-                value="**Tirada de Dados**: 4d6, descarta el más bajo\n6 veces para generar tus stats",
+                value="**Tirada de Dados**: 4d6, descarta el más bajo (x6)",
                 inline=False
             )
             
             embed.add_field(
                 name=f"💰 `{self.bot.command_prefix}crear_personaje compra`",
-                value="**Compra por Puntos**: 27 puntos para comprar stats\nCostos: 8(0), 9(1), 10(2), 11(3), 12(4), 13(5), 14(7), 15(9)",
+                value="**Compra por Puntos** (próximamente)",
                 inline=False
             )
             
@@ -86,118 +132,68 @@ class CharacterCommands(commands.Cog):
         
         if metodo == "puntos":
             resultado = self.creator.metodo_puntos_estandar()
-            
-            embed = discord.Embed(
-                title="🏆 Método: Puntos Estándar",
-                description=resultado['descripcion'],
-                color=discord.Color.green()
-            )
-            
             self.character_creation[user_id] = {
                 'metodo': 'puntos',
                 'puntos_base': resultado['puntos_base'],
                 'paso_actual': 'asignar_stats'
             }
-            
+            embed = discord.Embed(
+                title="🏆 Método: Puntos Estándar",
+                description=resultado['descripcion'],
+                color=discord.Color.green()
+            )
             embed.add_field(
                 name="📝 Próximo Paso",
-                value=f"Usa `{self.bot.command_prefix}asignar_stats 15 14 13 12 10 8`\n(Ajusta el orden según prefieras)",
+                value=f"Usa `{self.bot.command_prefix}asignar_stats 15 14 13 12 10 8` (en el orden que quieras)",
                 inline=False
             )
-            
+            await ctx.send(embed=embed)
+
         elif metodo == "tirada":
             resultado = self.creator.metodo_tirada_dados()
-            
-            embed = discord.Embed(
-                title="🎲 Método: Tirada de Dados",
-                color=discord.Color.orange()
-            )
-            
-            # Mostrar tiradas detalladas
-            detalles = ""
-            for i, tirada in enumerate(resultado['tiradas_detalladas']):
-                detalles += f"**Tirada {i+1}:** {tirada['tirada']} → descarta {tirada['descartado']} = **{tirada['total']}**\n"
-            
-            embed.add_field(
-                name="Resultados de las Tiradas",
-                value=detalles,
-                inline=False
-            )
-            
-            stats_str = ", ".join(map(str, resultado['stats_finales']))
-            embed.add_field(
-                name="🎯 Stats Generados",
-                value=stats_str,
-                inline=False
-            )
-            
             self.character_creation[user_id] = {
                 'metodo': 'tirada',
                 'stats_base': resultado['stats_finales'],
                 'paso_actual': 'asignar_stats'
             }
-            
+            detalles = "\n".join(
+                [f"**Tirada {i+1}:** {t['tirada']} → descarta {t['descartado']} = **{t['total']}**"
+                 for i, t in enumerate(resultado['tiradas_detalladas'])]
+            )
+            stats_str = ", ".join(map(str, resultado['stats_finales']))
+            embed = discord.Embed(
+                title="🎲 Método: Tirada de Dados",
+                color=discord.Color.orange()
+            )
+            embed.add_field(name="Resultados", value=detalles, inline=False)
+            embed.add_field(
+                name="🎯 Stats Generados",
+                value=stats_str,
+                inline=False
+            )
             embed.add_field(
                 name="📝 Próximo Paso",
                 value=f"Usa `{self.bot.command_prefix}asignar_stats {stats_str}` para asignar estos valores",
                 inline=False
             )
-            
-        elif metodo == "compra":
-            embed = discord.Embed(
-                title="💰 Método: Compra por Puntos",
-                description="Sistema de compra con 27 puntos. Costos: 8(0), 9(1), 10(2), 11(3), 12(4), 13(5), 14(7), 15(9)",
-                color=discord.Color.gold()
-            )
-            
-            self.character_creation[user_id] = {
-                'metodo': 'compra',
-                'puntos_disponibles': 27,
-                'paso_actual': 'comprar_stats'
-            }
-            
-            embed.add_field(
-                name="📝 Próximo Paso",
-                value=f"Usa `{self.bot.command_prefix}comprar_stats 14 13 15 12 10 8`\n(Máximo 15, mínimo 8, costo total ≤ 27)",
-                inline=False
-            )
-            
-        else:
-            await ctx.send("❌ Método no válido. Usa: `puntos`, `tirada` o `compra`")
-            return
-        
-        await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
 
-    @commands.command(
-        name='asignar_stats',
-        help='Asigna stats a las características',
-        description='Asigna los valores de stats a características específicas (Fuerza, Destreza, etc.)'
-    )
-    async def asignar_stats(self, ctx, fuerza: int, destreza: int, constitucion: int, 
-                               inteligencia: int, sabiduria: int, carisma: int):
-        """Asigna los stats generados a las características específicas"""
+        else:
+            await ctx.send("❌ Método no válido. Usa: `puntos` o `tirada`")
+            return
+
+    # ────────────────
+    # 📜 ASIGNAR STATS
+    # ────────────────
+    @commands.command(name='asignar_stats', help='Asigna stats a las características')
+    async def asignar_stats(self, ctx, fuerza: int, destreza: int, constitucion: int, inteligencia: int, sabiduria: int, carisma: int):
         user_id = str(ctx.author.id)
         
         if user_id not in self.character_creation:
-            embed = discord.Embed(
-                title="❌ Error",
-                description=f"Primero inicia la creación con `{self.bot.command_prefix}crear_personaje`",
-                color=discord.Color.red()
-            )
-            await ctx.send(embed=embed)
+            await ctx.send("❌ Primero inicia la creación con `!crear_personaje`")
             return
         
         proceso = self.character_creation[user_id]
-        
-        if proceso['paso_actual'] != 'asignar_stats':
-            embed = discord.Embed(
-                title="❌ Error",
-                description="No estás en la fase de asignación de stats",
-                color=discord.Color.red()
-            )
-            await ctx.send(embed=embed)
-            return
-        
         stats_asignados = {
             'Fuerza': fuerza,
             'Destreza': destreza,
@@ -206,45 +202,26 @@ class CharacterCommands(commands.Cog):
             'Sabiduría': sabiduria,
             'Carisma': carisma
         }
-        
-        # Validar según el método
+
+        # Validación
         if proceso['metodo'] == 'puntos':
-            puntos_usados = sorted([fuerza, destreza, constitucion, inteligencia, sabiduria, carisma])
-            puntos_esperados = sorted(proceso['puntos_base'])
-            
-            if puntos_usados != puntos_esperados:
-                embed = discord.Embed(
-                    title="❌ Error",
-                    description=f"Debes usar exactamente estos valores: {proceso['puntos_base']}",
-                    color=discord.Color.red()
-                )
-                await ctx.send(embed=embed)
+            if sorted(stats_asignados.values()) != sorted(proceso['puntos_base']):
+                await ctx.send(f"❌ Debes usar exactamente estos valores: {proceso['puntos_base']}")
                 return
-                
         elif proceso['metodo'] == 'tirada':
-            stats_usados = sorted([fuerza, destreza, constitucion, inteligencia, sabiduria, carisma])
-            stats_esperados = sorted(proceso['stats_base'])
-            
-            if stats_usados != stats_esperados:
-                embed = discord.Embed(
-                    title="❌ Error",
-                    description=f"Debes usar exactamente estos valores: {proceso['stats_base']}",
-                    color=discord.Color.red()
-                )
-                await ctx.send(embed=embed)
+            if sorted(stats_asignados.values()) != sorted(proceso['stats_base']):
+                await ctx.send(f"❌ Debes usar exactamente estos valores: {proceso['stats_base']}")
                 return
-        
-        # Guardar stats asignados
-        proceso['stats_asignados'] = stats_asignados
-        proceso['paso_actual'] = 'completado'
-        
-        # Mostrar resumen
+
+        # Guardar en DB
+        self._guardar_personaje(user_id, stats_asignados, proceso['metodo'])
+
+        # Embed resumen
         embed = discord.Embed(
             title="✅ Personaje Creado Exitosamente",
-            description="Estadísticas finales de tu personaje:",
+            description="Estadísticas finales:",
             color=discord.Color.green()
         )
-        
         for stat, valor in stats_asignados.items():
             modificador = self.creator.calcular_modificador(valor)
             signo = "+" if modificador >= 0 else ""
@@ -253,28 +230,45 @@ class CharacterCommands(commands.Cog):
                 value=f"**{valor}** ({signo}{modificador})",
                 inline=True
             )
-        
-        embed.add_field(
-            name="🎯 Próximos Pasos",
-            value=f"Usa `{self.bot.command_prefix}mi_personaje` para ver tu ficha completa\n`{self.bot.command_prefix}ayuda` para más comandos",
-            inline=False
-        )
-        
         await ctx.send(embed=embed)
 
-    @commands.command(
-        name='mi_personaje',
-        help='Muestra la ficha de tu personaje',
-        description='Muestra la información completa de tu personaje actual'
-    )
+    # ────────────────
+    # 📜 MOSTRAR PERSONAJE
+    # ────────────────
+    @commands.command(name='mi_personaje', help='Muestra tu personaje actual')
     async def mi_personaje(self, ctx):
-        """Muestra la ficha del personaje (placeholder)"""
+        user_id = str(ctx.author.id)
+        personaje = self._obtener_personaje(user_id)
+
+        if not personaje:
+            await ctx.send("❌ No tenés un personaje creado todavía.")
+            return
+
+        # personaje = (user_id, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, metodo)
+        _, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, metodo = personaje
+
         embed = discord.Embed(
-            title="📜 Tu Personaje",
-            description="Funcionalidad en desarrollo - Próximamente mostrará tu ficha completa",
+            title=f"📜 Personaje de {ctx.author.display_name}",
+            description=f"Método de creación: **{metodo.capitalize()}**",
             color=discord.Color.blue()
         )
+
+        stats = {
+            'Fuerza': fuerza,
+            'Destreza': destreza,
+            'Constitución': constitucion,
+            'Inteligencia': inteligencia,
+            'Sabiduría': sabiduria,
+            'Carisma': carisma
+        }
+
+        for stat, valor in stats.items():
+            mod = self.creator.calcular_modificador(valor)
+            signo = "+" if mod >= 0 else ""
+            embed.add_field(name=stat, value=f"{valor} ({signo}{mod})", inline=True)
+
         await ctx.send(embed=embed)
+
 
 async def setup(bot):
     await bot.add_cog(CharacterCommands(bot))
