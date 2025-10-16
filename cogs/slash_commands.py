@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+from models import database
 
 class SlashCommands(commands.Cog):
     def __init__(self, bot):
@@ -68,16 +69,45 @@ class SlashCommands(commands.Cog):
         
         await interaction.response.send_message(embed=embed)
 
-    # COMANDO PARA VER PERSONAJE
+    # COMANDO PARA VER PERSONAJEfrom models import database
+
     @app_commands.command(name="mi_personaje", description="Muestra tu personaje actual")
     async def mi_personaje(self, interaction: discord.Interaction):
+        personaje = database.get_character(str(interaction.user.id))
+
+        if not personaje:
+            await interaction.response.send_message(
+                "❌ No tenés ningún personaje guardado. Importá uno con `!importar_link <URL>`.",
+                ephemeral=True
+            )
+            return
+
         embed = discord.Embed(
-            title="📜 Tu Personaje",
-            description="Funcionalidad en desarrollo",
+            title=f"📜 {personaje['name']}",
+            description=f"{personaje['race']} - {personaje['class']} (Nivel {personaje['level']})",
             color=discord.Color.blue()
         )
-        
+        embed.add_field(name="❤️ HP", value=str(personaje["hp"]))
+        embed.add_field(name="🛡 CA", value=str(personaje["ac"]))
+
+        stats = [
+    ("Fuerza", "str"),
+    ("Destreza", "dex"),
+    ("Constitución", "con"),
+    ("Inteligencia", "int_stat"),
+    ("Sabiduría", "wis"),
+    ("Carisma", "cha")
+]
+
+
+        for nombre_stat, clave in stats:
+            valor = personaje[clave]
+            mod = (valor - 10) // 2
+            signo = "+" if mod >= 0 else ""
+            embed.add_field(name=nombre_stat, value=f"{valor} ({signo}{mod})", inline=True)
+
         await interaction.response.send_message(embed=embed)
+
 
 async def setup(bot):
     await bot.add_cog(SlashCommands(bot))
