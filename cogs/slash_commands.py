@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+from utils import races_loader
 from models import database
 
 # ===========================
@@ -57,106 +58,79 @@ class SlashCommands(commands.Cog):
 # 🧍 GRUPO DE COMANDOS: /personaje
 # ===========================
 
+import discord
+from discord import app_commands
+from discord.ext import commands
+from utils import races_loader  # 👈 Importamos el loader de razas
+from models import database
+
+class SlashCommands(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    # Comando de prueba
+    @app_commands.command(name="ping", description="Verifica si el bot está funcionando")
+    async def ping(self, interaction: discord.Interaction):
+        await interaction.response.send_message(f"🏓 Pong! Latencia: {round(self.bot.latency * 1000)}ms")
+
+# 🧠 Grupo de comandos /personaje
 @app_commands.guild_only()
 class PersonajeGroup(app_commands.Group):
     def __init__(self):
         super().__init__(name="personaje", description="Comandos relacionados con tu personaje")
 
-    # ✨ Crear personaje con opciones predefinidas
+    # --- AUTOCOMPLETADO ---
+    async def race_autocomplete(self, interaction: discord.Interaction, current: str):
+        """Autocomplete dinámico para la raza."""
+        races = races_loader.get_available_races()
+        return [
+            app_commands.Choice(name=race, value=race)
+            for race in races if current.lower() in race.lower()
+        ][:25]
+
+    async def subrace_autocomplete(self, interaction: discord.Interaction, current: str):
+        """Autocomplete dinámico para subrazas en función de la raza elegida."""
+        # Recuperar la raza que el usuario escribió
+        chosen_race = interaction.namespace.race
+        subraces = races_loader.get_subraces_for_race(chosen_race)
+        return [
+            app_commands.Choice(name=sub, value=sub)
+            for sub in subraces if current.lower() in sub.lower()
+        ][:25]
+
+    # --- CREAR PERSONAJE ---
     @app_commands.command(name="crear", description="Crea un nuevo personaje")
     @app_commands.describe(
         nombre="Nombre de tu personaje",
-        metodo="Método para generar estadísticas",
-        raza="Raza del personaje",
-        subraza="Subraza (opcional)",
-        trasfondo="Trasfondo",
-        clase="Clase",
-        subclase="Subclase (opcional)"
+        raza="Selecciona la raza",
+        subraza="Selecciona la subraza (si corresponde)"
     )
-    @app_commands.choices(
-        metodo=[
-            app_commands.Choice(name="Tirada de Dados (4d6, descartar 1)", value="tirada"),
-            app_commands.Choice(name="Puntos Estándar (15,14,13,12,10,8)", value="puntos"),
-            app_commands.Choice(name="Compra por Puntos (27)", value="compra"),
-        ],
-        raza=[
-            app_commands.Choice(name="Humano", value="Humano"),
-            app_commands.Choice(name="Elfo", value="Elfo"),
-            app_commands.Choice(name="Enano", value="Enano"),
-            app_commands.Choice(name="Tiefling", value="Tiefling"),
-        ],
-        subraza=[
-            app_commands.Choice(name="Ninguna", value="Ninguna"),
-            app_commands.Choice(name="Alto Elfo", value="Alto Elfo"),
-            app_commands.Choice(name="Drow", value="Drow"),
-            app_commands.Choice(name="Enano de las Colinas", value="Enano de las Colinas"),
-            app_commands.Choice(name="Enano de las Montañas", value="Enano de las Montañas"),
-        ],
-        trasfondo=[
-            app_commands.Choice(name="Noble", value="Noble"),
-            app_commands.Choice(name="Criminal", value="Criminal"),
-            app_commands.Choice(name="Sabio", value="Sabio"),
-        ],
-        clase=[
-            app_commands.Choice(name="Guerrero", value="Guerrero"),
-            app_commands.Choice(name="Mago", value="Mago"),
-            app_commands.Choice(name="Pícaro", value="Pícaro"),
-            app_commands.Choice(name="Brujo", value="Brujo"),
-        ],
-        subclase=[
-            app_commands.Choice(name="Ninguna", value="Ninguna"),
-            app_commands.Choice(name="Campeón (Guerrero)", value="Campeón"),
-            app_commands.Choice(name="Evocador (Mago)", value="Evocador"),
-            app_commands.Choice(name="Ladrón (Pícaro)", value="Ladrón"),
-        ]
-    )
-    async def crear(
-        self,
-        interaction: discord.Interaction,
-        nombre: str,
-        metodo: app_commands.Choice[str],
-        raza: app_commands.Choice[str],
-        subraza: app_commands.Choice[str],
-        trasfondo: app_commands.Choice[str],
-        clase: app_commands.Choice[str],
-        subclase: app_commands.Choice[str],
-    ):
-        # Importar aquí para evitar dependencias circulares
-        from cogs.character_creation import crear_personaje_db
-
+    @app_commands.autocomplete(raza=race_autocomplete, subraza=subrace_autocomplete)
+    async def crear(self, interaction: discord.Interaction, nombre: str, raza: str, subraza: str = None):
         user_id = str(interaction.user.id)
 
-        personaje = crear_personaje_db(
-            user_id,
-            nombre,
-            metodo.value,
-            raza.value,
-            subraza.value,
-            trasfondo.value,
-            clase.value,
-            subclase.value
-        )
+        # Guardar en base de datos
+        with database.get_connection() as conn:
+            c = conn.cursor()
+            c.execute("""
+                INSERT OR REPLACE INTO characters (user_id, name, race, subrace, level)
+                VALUES (?, ?, ?, ?, ?)
+            """, (user_id, nombre, raza, subraza or "", 1))
+            conn.commit()
 
         embed = discord.Embed(
-            title=f"✅ Personaje Creado: {personaje['name']}",
-            description=f"{personaje['race']} {personaje['class']} - Nivel 1",
+            title="🎭 Personaje Creado",
+            description=f"**{nombre}** — {raza}" + (f" ({subraza})" if subraza else ""),
             color=discord.Color.green()
         )
-        embed.add_field(name="Método Stats", value=metodo.name, inline=False)
-        embed.add_field(
-            name="🎲 Estadísticas Generadas",
-            value=(
-                f"**FUE** {personaje['str']} | "
-                f"**DES** {personaje['dex']} | "
-                f"**CON** {personaje['con']} | "
-                f"**INT** {personaje['int_stat']} | "
-                f"**SAB** {personaje['wis']} | "
-                f"**CAR** {personaje['cha']}"
-            ),
-            inline=False
-        )
+        embed.add_field(name="Nivel", value="1", inline=True)
+        embed.add_field(name="Usuario", value=interaction.user.mention, inline=True)
 
         await interaction.response.send_message(embed=embed)
+
+async def setup(bot):
+    await bot.add_cog(SlashCommands(bot))
+    bot.tree.add_command(PersonajeGroup())
 
     # 📜 Mostrar personaje
     @app_commands.command(name="mi", description="Muestra tu personaje actual")

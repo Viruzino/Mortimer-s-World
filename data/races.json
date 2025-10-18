@@ -1,24 +1,738 @@
 {
-    "razas": [
-        {
-            "nombre": "Humano",
-            "descripcion": "Versátiles y adaptables, los humanos son la raza más común.",
-            "bonificaciones": {"fuerza": 1, "destreza": 1, "constitucion": 1, "inteligencia": 1, "sabiduria": 1, "carisma": 1},
-            "edad": "Viven menos de 100 años",
-            "tamaño": "Mediano",
-            "velocidad": 30,
-            "idiomas": ["Común"],
-            "rasgos": ["Versatilidad"]
-        },
-        {
-            "nombre": "Elfo",
-            "descripcion": "Seres gráciles y longevos con conexión con la naturaleza y la magia.",
-            "bonificaciones": {"destreza": 2},
-            "edad": "Pueden vivir hasta 750 años",
-            "tamaño": "Mediano",
-            "velocidad": 30,
-            "idiomas": ["Común", "Élfico"],
-            "rasgos": ["Ascendencia Feérica", "Trance"]
-        }
-    ]
+  "Aarakocra": [
+    {
+      "fuente": "EEPC",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Aasimar": [
+    {
+      "fuente": "DMG",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Fallen", "disponibilidad": "✅"},
+        {"nombre": "Protector", "disponibilidad": "⚠️"},
+        {"nombre": "Scourge", "disponibilidad": "✅"}
+      ]
+    }
+  ],
+  "Astral Elf": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Autognome": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Bugbear": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Centaur": [
+    {
+      "fuente": "GGR",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MOT",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Changeling": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Custom Lineage": [
+    {
+      "fuente": "TCE",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Deep Gnome": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Dhampir": [
+    {
+      "fuente": "VRGR",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Dragonborn": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "FTD",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Chromatic", "disponibilidad": "✅"},
+        {"nombre": "Gem", "disponibilidad": "✅"},
+        {"nombre": "Metallic", "disponibilidad": "✅"}
+      ]
+    }
+  ],
+  "Duergar": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Dwarf": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Hill", "disponibilidad": "✅"},
+        {"nombre": "Mountain", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "MTF",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Duergar", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Warding", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Elf": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Drow", "disponibilidad": "✅"},
+        {"nombre": "High", "disponibilidad": "✅"},
+        {"nombre": "Wood", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "DMG",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Eladrin", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "MTF",
+      "disponibilidad": "⚠️",
+      "subrazas": [
+        {"nombre": "Eladrin", "disponibilidad": "⚠️"},
+        {"nombre": "Sea", "disponibilidad": "⚠️"},
+        {"nombre": "Shadar-kai", "disponibilidad": "⚠️"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Shadow", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Fairy": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "WBTW",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Firbolg": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Genasi": [
+    {
+      "fuente": "EEPC",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Air", "disponibilidad": "❌"},
+        {"nombre": "Earth", "disponibilidad": "❌"},
+        {"nombre": "Fire", "disponibilidad": "✅"},
+        {"nombre": "Water", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Air", "disponibilidad": "✅"},
+        {"nombre": "Earth", "disponibilidad": "✅"},
+        {"nombre": "Fire", "disponibilidad": "✅"},
+        {"nombre": "Water", "disponibilidad": "✅"}
+      ]
+    }
+  ],
+  "Giff": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Gith": [
+    {
+      "fuente": "MTF",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Githyanki", "disponibilidad": "❌"},
+        {"nombre": "Githzerai", "disponibilidad": "❌"}
+      ]
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Githyanki", "disponibilidad": "❌"},
+        {"nombre": "Githzerai", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Gnome": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Forest", "disponibilidad": "✅"},
+        {"nombre": "Rock", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "MTF",
+      "disponibilidad": "⚠️",
+      "subrazas": [
+        {"nombre": "Deep", "disponibilidad": "⚠️"}
+      ]
+    },
+    {
+      "fuente": "SCAG",
+      "disponibilidad": "⚠️",
+      "subrazas": [
+        {"nombre": "Deep/Svirfneblin", "disponibilidad": "⚠️"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": [
+        {"nombre": "Mark of Scribing", "disponibilidad": "⚠️"}
+      ]
+    }
+  ],
+  "Goblin": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "GGR",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Goliath": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Hadozee": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Half-Elf": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "SCAG",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Aquatic Elf Descent", "disponibilidad": "✅"},
+        {"nombre": "Drow Descent", "disponibilidad": "✅"},
+        {"nombre": "Moon or Sun Elf Descent", "disponibilidad": "✅"},
+        {"nombre": "Wood Elf Descent", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Detection", "disponibilidad": "❌"},
+        {"nombre": "Mark of Storm", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Half-Orc": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Finding", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Halfling": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Lightfoot", "disponibilidad": "✅"},
+        {"nombre": "Stout", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "SCAG",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Ghostwise", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Healing", "disponibilidad": "❌"},
+        {"nombre": "Mark of Hospitality", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Harengon": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "WBTW",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Hexblood": [
+    {
+      "fuente": "VRGR",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Hobgoblin": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Human": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Variant", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Mark of Handling", "disponibilidad": "❌"},
+        {"nombre": "Mark of Making", "disponibilidad": "❌"},
+        {"nombre": "Mark of Passage", "disponibilidad": "❌"},
+        {"nombre": "Mark of Sentinel", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Kalashtar": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Kender": [
+    {
+      "fuente": "DSotDQ",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Kenku": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Kobold": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Leonin": [
+    {
+      "fuente": "MOT",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Lizardfolk": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Loxodon": [
+    {
+      "fuente": "GGR",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Minotaur": [
+    {
+      "fuente": "GGR",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MOT",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Orc": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Owlin": [
+    {
+      "fuente": "SCC",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Plasmoid": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Reborn": [
+    {
+      "fuente": "VRGR",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Satyr": [
+    {
+      "fuente": "MOT",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Sea Elf": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Shadar-Kai": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Shifter": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "⚠️",
+      "subrazas": [
+        {"nombre": "Beasthide", "disponibilidad": "⚠️"},
+        {"nombre": "Longtooth", "disponibilidad": "⚠️"},
+        {"nombre": "Swiftstride", "disponibilidad": "⚠️"},
+        {"nombre": "Wildhunt", "disponibilidad": "⚠️"}
+      ]
+    }
+  ],
+  "Simic Hybrid": [
+    {
+      "fuente": "GGR",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Tabaxi": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "❌",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Thri-kreen": [
+    {
+      "fuente": "AAG",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Tiefling": [
+    {
+      "fuente": "PHB",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "MTF",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Asmodeus", "disponibilidad": "✅"},
+        {"nombre": "Baalzebul", "disponibilidad": "✅"},
+        {"nombre": "Dispater", "disponibilidad": "✅"},
+        {"nombre": "Fierna", "disponibilidad": "✅"},
+        {"nombre": "Glasya", "disponibilidad": "✅"},
+        {"nombre": "Levistus", "disponibilidad": "✅"},
+        {"nombre": "Mammon", "disponibilidad": "✅"},
+        {"nombre": "Mephistopheles", "disponibilidad": "✅"},
+        {"nombre": "Zariel", "disponibilidad": "✅"}
+      ]
+    },
+    {
+      "fuente": "SCAG",
+      "disponibilidad": "✅",
+      "subrazas": [
+        {"nombre": "Devil's Tongue", "disponibilidad": "✅"},
+        {"nombre": "Hellfire", "disponibilidad": "✅"},
+        {"nombre": "Infernal Legacy", "disponibilidad": "✅"},
+        {"nombre": "Winged", "disponibilidad": "❌"}
+      ]
+    }
+  ],
+  "Tortle": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Triton": [
+    {
+      "fuente": "MOT",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "✅",
+      "subrazas": []
+    }
+  ],
+  "Vedalken": [
+    {
+      "fuente": "GGR",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Verdan": [
+    {
+      "fuente": "AI",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    }
+  ],
+  "Warforged": [
+    {
+      "fuente": "ERLW",
+      "disponibilidad": "❌",
+      "subrazas": []
+    }
+  ],
+  "Yuan-Ti": [
+    {
+      "fuente": "MPMM",
+      "disponibilidad": "⚠️",
+      "subrazas": []
+    },
+    {
+      "fuente": "VGM",
+      "disponibilidad": "❌",
+      "subrazas": [
+        {"nombre": "Pureblood", "disponibilidad": "❌"}
+      ]
+    }
+  ]
 }
