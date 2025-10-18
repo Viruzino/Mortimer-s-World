@@ -1,3 +1,4 @@
+# main.py
 import os
 import discord
 from dotenv import load_dotenv
@@ -9,20 +10,14 @@ load_dotenv()
 
 def main():
     token = os.getenv('DISCORD_TOKEN')
-    
+
     if not token:
         print("❌ ERROR: No se encontró DISCORD_TOKEN en el archivo .env")
         print("💡 Crea un archivo .env con: DISCORD_TOKEN=tu_token_aqui")
         return
 
-    # 🧱 Inicializar base de datos antes de levantar el bot
-    print("🗃️ Inicializando base de datos...")
-    try:
-        database.create_tables()
-        print("✅ Base de datos lista.")
-    except Exception as e:
-        print(f"❌ Error al inicializar la base de datos: {e}")
-        return
+    # 🧠 Inicializar base de datos
+    database.init_db()
 
     print("🚀 Iniciando bot de D&D...")
 
@@ -38,3 +33,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
