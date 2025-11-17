@@ -37,7 +37,8 @@ def crear_personaje_db(user_id, nombre, metodo, raza, subraza, trasfondo, clase,
         "con": constitucion,
         "int_stat": inteligencia,
         "wis": sabiduria,
-        "cha": carisma
+        "cha": carisma,
+        "gold": 0
     }
 
     database.create_character(personaje_data)

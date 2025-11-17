@@ -1,47 +1,41 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from utils import races_loader
 from models import database
+from utils import races_loader  # 👈 Para autocompletado de razas y subrazas
 
-# ===========================
-# 📌 COMANDOS BÁSICOS
-# ===========================
-
+# =============================
+# 🧠 Comandos básicos
+# =============================
 class SlashCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # 🧪 Comando de prueba
     @app_commands.command(name="ping", description="Verifica si el bot está funcionando")
     async def ping(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f"🏓 Pong! Latencia: {round(self.bot.latency * 1000)} ms")
+        await interaction.response.send_message(f"🏓 Pong! Latencia: {round(self.bot.latency * 1000)}ms")
 
-    # 📚 Ayuda
     @app_commands.command(name="ayuda", description="Muestra todos los comandos disponibles")
     async def ayuda(self, interaction: discord.Interaction):
         embed = discord.Embed(
             title="🎲 Ayuda - Mortimer's World D&D Bot",
-            description="Lista de comandos disponibles:",
+            description="Comandos disponibles:",
             color=discord.Color.blue()
         )
         embed.add_field(
-            name="🧭 Básicos",
-            value="/ping → Verifica el bot\n"
-                  "/ayuda → Muestra esta ayuda\n"
-                  "/info → Información sobre el bot",
+            name="Comandos Básicos",
+            value="/ping - Verifica el bot\n/ayuda - Muestra esta ayuda\n/info - Información del bot",
             inline=False
         )
         embed.add_field(
-            name="🧍 Personaje",
-            value="/personaje crear → Crea un personaje\n"
-                  "/personaje mi → Muestra tu ficha\n"
-                  "/personaje borrar → Borra tu personaje",
+            name="Comandos de Personaje",
+            value="/personaje crear - Crea un personaje\n"
+                  "/personaje mi - Muestra tu ficha\n"
+                  "/personaje borrar - Borra tu personaje",
             inline=False
         )
         await interaction.response.send_message(embed=embed)
 
-    # 🧠 Info del bot
     @app_commands.command(name="info", description="Información sobre el bot")
     async def info(self, interaction: discord.Interaction):
         embed = discord.Embed(
@@ -51,37 +45,20 @@ class SlashCommands(commands.Cog):
         )
         embed.add_field(name="Versión", value="1.0.0", inline=True)
         embed.add_field(name="Servidores", value=str(len(self.bot.guilds)), inline=True)
-        embed.add_field(name="Latencia", value=f"{round(self.bot.latency * 1000)} ms", inline=True)
+        embed.add_field(name="Latencia", value=f"{round(self.bot.latency * 1000)}ms", inline=True)
         await interaction.response.send_message(embed=embed)
 
-# ===========================
-# 🧍 GRUPO DE COMANDOS: /personaje
-# ===========================
 
-import discord
-from discord import app_commands
-from discord.ext import commands
-from utils import races_loader  # 👈 Importamos el loader de razas
-from models import database
-
-class SlashCommands(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-
-    # Comando de prueba
-    @app_commands.command(name="ping", description="Verifica si el bot está funcionando")
-    async def ping(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f"🏓 Pong! Latencia: {round(self.bot.latency * 1000)}ms")
-
-# 🧠 Grupo de comandos /personaje
+# =============================
+# 🧍 Grupo de comandos /personaje
+# =============================
 @app_commands.guild_only()
 class PersonajeGroup(app_commands.Group):
     def __init__(self):
         super().__init__(name="personaje", description="Comandos relacionados con tu personaje")
 
-    # --- AUTOCOMPLETADO ---
+    # --- Autocompletado de razas ---
     async def race_autocomplete(self, interaction: discord.Interaction, current: str):
-        """Autocomplete dinámico para la raza."""
         races = races_loader.get_available_races()
         return [
             app_commands.Choice(name=race, value=race)
@@ -89,16 +66,14 @@ class PersonajeGroup(app_commands.Group):
         ][:25]
 
     async def subrace_autocomplete(self, interaction: discord.Interaction, current: str):
-        """Autocomplete dinámico para subrazas en función de la raza elegida."""
-        # Recuperar la raza que el usuario escribió
-        chosen_race = interaction.namespace.race
+        chosen_race = interaction.namespace.raza
         subraces = races_loader.get_subraces_for_race(chosen_race)
         return [
             app_commands.Choice(name=sub, value=sub)
             for sub in subraces if current.lower() in sub.lower()
         ][:25]
 
-    # --- CREAR PERSONAJE ---
+    # --- /personaje crear ---
     @app_commands.command(name="crear", description="Crea un nuevo personaje")
     @app_commands.describe(
         nombre="Nombre de tu personaje",
@@ -109,7 +84,6 @@ class PersonajeGroup(app_commands.Group):
     async def crear(self, interaction: discord.Interaction, nombre: str, raza: str, subraza: str = None):
         user_id = str(interaction.user.id)
 
-        # Guardar en base de datos
         with database.get_connection() as conn:
             c = conn.cursor()
             c.execute("""
@@ -128,47 +102,27 @@ class PersonajeGroup(app_commands.Group):
 
         await interaction.response.send_message(embed=embed)
 
-async def setup(bot):
-    await bot.add_cog(SlashCommands(bot))
-    bot.tree.add_command(PersonajeGroup())
-
-    # 📜 Mostrar personaje
+    # --- /personaje mi ---
     @app_commands.command(name="mi", description="Muestra tu personaje actual")
     async def mi(self, interaction: discord.Interaction):
         personaje = database.get_character(str(interaction.user.id))
         if not personaje:
             await interaction.response.send_message(
-                "❌ No tenés ningún personaje guardado. Usá `/personaje crear` o `!importar_link <URL>`.",
+                "No tenes ningun personaje guardado. Usa `/personaje crear` para empezar.",
                 ephemeral=True
             )
             return
 
         embed = discord.Embed(
-            title=f"📜 {personaje['name']}",
-            description=f"{personaje['race']} - {personaje['class']} (Nivel {personaje['level']})",
+            title=f"Ficha de {personaje['name']}",
+            description=f"{personaje['race']}" + (f" ({personaje['subrace']})" if personaje['subrace'] else ""),
             color=discord.Color.blue()
         )
-        embed.add_field(name="❤️ HP", value=str(personaje["hp"]))
-        embed.add_field(name="🛡 CA", value=str(personaje["ac"]))
-
-        stats = [
-            ("Fuerza", "str"),
-            ("Destreza", "dex"),
-            ("Constitución", "con"),
-            ("Inteligencia", "int_stat"),
-            ("Sabiduría", "wis"),
-            ("Carisma", "cha")
-        ]
-        for nombre_stat, clave in stats:
-            valor = personaje[clave]
-            mod = (valor - 10) // 2
-            signo = "+" if mod >= 0 else ""
-            embed.add_field(name=nombre_stat, value=f"{valor} ({signo}{mod})", inline=True)
-
+        embed.add_field(name="Nivel", value=str(personaje["level"]), inline=True)
+        embed.add_field(name="Oro", value=f"{personaje.get('gold', 0)} PO", inline=True)
         await interaction.response.send_message(embed=embed)
-
-    # 🧹 Borrar personaje (igual que antes)
-    @app_commands.command(name="borrar", description="Borra tu personaje guardado")
+    # --- /personaje borrar ---
+    @app_commands.command(name="borrar", description="Borra permanentemente tu personaje guardado")
     async def borrar(self, interaction: discord.Interaction):
         personaje = database.get_character(str(interaction.user.id))
         if not personaje:
@@ -180,7 +134,7 @@ async def setup(bot):
 
         embed = discord.Embed(
             title="⚠️ Confirmación requerida",
-            description=f"¿Querés borrar **{personaje['name']}**? Esta acción no se puede deshacer.",
+            description=f"¿Estás seguro de que querés **borrar a {personaje['name']}**? Esta acción no se puede deshacer.",
             color=discord.Color.red()
         )
 
@@ -215,12 +169,10 @@ async def setup(bot):
             await interaction.followup.send("❎ Operación cancelada. Tu personaje no fue borrado.", ephemeral=True)
 
 
-# ===========================
-# ⚡ REGISTRO DE COGS
-# ===========================
-
+# =============================
+# ⚡ Registro de comandos
+# =============================
 async def setup(bot):
-    # Comandos slash globales
     await bot.add_cog(SlashCommands(bot))
-    # Grupo de comandos /personaje
     bot.tree.add_command(PersonajeGroup())
+

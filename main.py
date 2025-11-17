@@ -17,7 +17,7 @@ def main():
         return
 
     # 🧠 Inicializar base de datos
-    database.init_db()
+    database.init_database()
 
     print("🚀 Iniciando bot de D&D...")
 

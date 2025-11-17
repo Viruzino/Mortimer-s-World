@@ -8,6 +8,8 @@ class CharacterCommands(commands.Cog):
         self.bot = bot
 
     @commands.command(name="importar_link", help="Importa un personaje desde un link público de Nivel20")
+    @commands.guild_only()
+    @commands.has_permissions(administrator=True)
     async def importar_link(self, ctx, url: str):
         """Importa la ficha de un personaje directamente desde un enlace JSON de Nivel20"""
 
@@ -22,11 +24,20 @@ class CharacterCommands(commands.Cog):
 
         # 🧠 Descargar JSON
         try:
-            response = requests.get(url)
+            response = requests.get(url, timeout=15)
             response.raise_for_status()
+        except requests.RequestException as e:
+            await ctx.send(f"❌ No se pudo descargar el personaje (error de red): {e}")
+            return
+
+        try:
             data = response.json()
-        except Exception as e:
-            await ctx.send(f"❌ No se pudo descargar el personaje. Error: {e}")
+        except ValueError:
+            content_type = response.headers.get("content-type", "")
+            if "json" not in content_type.lower():
+                await ctx.send("❌ El link no devolvió un JSON público. Activa el enlace compartido en Nivel20.")
+            else:
+                await ctx.send("❌ El JSON recibido está dañado o es inválido.")
             return
 
         # --- Parsear datos principales ---
@@ -52,6 +63,13 @@ class CharacterCommands(commands.Cog):
             carisma = abilities["car"]["total"]
         except KeyError as e:
             await ctx.send(f"❌ No se pudo leer la estructura del personaje (clave faltante: {e}).")
+            return
+
+        # --- Validar nombre unico ---
+        if database.character_name_exists(nombre, exclude_user_id=str(ctx.author.id)):
+            await ctx.send(
+                "�?O Ya existe un personaje con ese nombre. Renombralo en Nivel20 o elige otro antes de importar."
+            )
             return
 
         # --- Guardar en base de datos ---
@@ -99,7 +117,15 @@ class CharacterCommands(commands.Cog):
 
         await ctx.send(embed=embed)
 
+    @importar_link.error
+    async def importar_link_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send("�?O Este comando es solo para Dungeons Masters o administradores.")
+        elif isinstance(error, commands.NoPrivateMessage):
+            await ctx.send("�?O Este comando solo puede usarse dentro de un servidor.")
+        else:
+            raise error
+
 
 async def setup(bot):
     await bot.add_cog(CharacterCommands(bot))
-
